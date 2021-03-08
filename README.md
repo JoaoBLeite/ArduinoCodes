@@ -7,4 +7,4 @@
   - MayTheForceBeWithYou( );
 
 ## // Files menu:
-1. **Genius**: The genius game, made in arduino;
+1. **Genius**: The genius game, made in arduino; The folder contains a code.ino and an circuit image;
