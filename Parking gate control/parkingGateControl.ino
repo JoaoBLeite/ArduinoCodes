@@ -1,17 +1,12 @@
-/* 
-Exercicios LIP
-PUC Minas - P. Liberdade
-Joao Pedro Barbosa Leite - 690857
-*/
 #include <Servo.h>
 
-// dados globais:
+// Global data:
 int cm = 0;
 int vagas = 5;
 const int nrLed = 5;
 int vtLed[nrLed] = {10, 2, 3, 4, 5};
 
-// metodo para acender todos os 5 Leds:
+// Method turn on 5 leds:
 void LedHIGH ( ) {
   int c = 5;
   for ( int i = 0, c = 5; i < 5; i++, c-- ) {
@@ -19,7 +14,7 @@ void LedHIGH ( ) {
   }
 }
 
-// metodo para apagar todos os 5 Leds:
+// Method turn off 5 leds:
 void LedLOW ( ) {
   int c = 5;
   for ( int i = 0, c = 5; i < 5; i++, c-- ) {
@@ -27,7 +22,7 @@ void LedLOW ( ) {
   }
 }
 
-// metodo de entrar um carro:
+// Car entry method:
 void entrou ( ) {
   int i = 0;
   for ( i = 0; i < nrLed; i++ ) {
@@ -39,7 +34,7 @@ void entrou ( ) {
   }
 }
 
-// metodo de sair um carro:
+// Car exit method:
 void saiu ( ) {
   int i = 0;
   for ( i = 0; i < nrLed; i++ ) {
@@ -51,7 +46,7 @@ void saiu ( ) {
   }
 }
 
-// funcao para calcular distancia:
+// Function to calculate the distance with the car:
 long readUltrasonicDistance(int triggerPin, int echoPin)
 {
   pinMode(triggerPin, OUTPUT);  // Clear the trigger
@@ -79,20 +74,20 @@ void setup()
   pinMode(3, OUTPUT);
   pinMode(4, OUTPUT);
   pinMode(5, OUTPUT);
-  // Botão:
+  // Btn:
   pinMode(13, INPUT);
 
 }
 
 void loop()
 {
-  // Calcular distancia em cm:
+  // Calculate distance in cm:
   cm = 0.01723 * readUltrasonicDistance(7, 7);
   Serial.println(cm);
   delay(200);
-  // verificar se ha vagas:
+  // check for a parking space:
   if ( vagas > 0 ) {
-    // carro entrando:
+    // car entering:
     if ( cm <= 50 ) {
       servo_9.write(90);
       vagas = vagas - 1;
@@ -100,14 +95,14 @@ void loop()
       delay(1000);
       servo_9.write(-90);
       delay(5000); 
-    } else { // carro nao entrando:
+    } else { // car not entering:
       servo_9.write(0);
     }
   }
   
-  // verificar se ha carros nas vagas:
+  // check for cars in the vacancies:
   if ( vagas < 5 ) {
-    // carro saindo:
+    // carro going out:
     if ( digitalRead(13) == HIGH ) {
       servo_9.write(90);
       vagas = vagas + 1;
