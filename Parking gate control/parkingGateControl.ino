@@ -1,3 +1,11 @@
+/**
+ * Arduino - Parking gate control
+ *
+ * @author: JohnyStudent
+ * @date: 13 Jun 2020
+ * @version: v1.0
+ */
+
 #include <Servo.h>
 
 // Global data:
