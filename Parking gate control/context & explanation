@@ -2,10 +2,10 @@
 
 -- [EN]
 There is a car park with 5 spaces, initially available, and individually represented by an LED each.
-When a car approaches the parking gate at a distance of 20cm, if there is a parking space available (LED off) the gate opens, the parking space is occupied (LED on) and the gate closes.
+When a car approaches the parking gate at a distance of 50cm, if there is a parking space available (LED off) the gate opens, the parking space is occupied (LED on) and the gate closes.
 When a car leaves the parking lot, your driver presses a BUTTON that opens the gate, vacates the vacancy (LED off) and closes the gate.
 
 -- [PT-BR]
 Há um estacionamento de carros com 5 vagas, inicialmente disponíveis, e representadas individualmente por um LED cada.
-Quando um carro se aproxima da cancela do estacionamento em uma distância de 20cm, caso exista vaga disponível (LED apagado) a cancela se abre, a vaga é ocupada (LED aceso) e a cancela se fecha.
+Quando um carro se aproxima da cancela do estacionamento em uma distância de 50cm, caso exista vaga disponível (LED apagado) a cancela se abre, a vaga é ocupada (LED aceso) e a cancela se fecha.
 Quando um carro sai do estacionamento, o seu motorista aperta um BOTÃO que abre a cancela, desocupa a vaga (LED apagado) e fecha a cancela.
